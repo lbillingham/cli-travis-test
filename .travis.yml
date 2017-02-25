@@ -5,6 +5,7 @@ python:
 -   "3.4"
 -   "3.5"
 install:
--   pip install tox
+-   pip install --user -r requirements.txt
+-   pip install --user tox
 script:
--   tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d . | sed -e 's/pypypy/pypy/')
+-   tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d .)
