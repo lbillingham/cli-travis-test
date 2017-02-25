@@ -25,3 +25,4 @@ Install the test/development dependencies
 Run the tests and get a coverage report
 
     $ pytest --cov-report term-missing --cov cli_greet
+
