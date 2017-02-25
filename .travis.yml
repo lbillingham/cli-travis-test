@@ -3,8 +3,12 @@ python:
 -   "2.7"
 -   "3.5"
 install:
-#-   pip install -r requirements.txt
-#-   pip install -r requirements_dev.txt
--   pip install tox
+-   pip install .
+-   pip install -r requirements_dev.txt
+# -   pip install --user tox
 script:
--   tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d .)
+# -   tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d .)
+- flake8 cli_greet tests --max-line-length=120
+- pylint cli_greet tests
+- py.test --cov cli_greet
+
